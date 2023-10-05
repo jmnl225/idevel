@@ -25,50 +25,6 @@ function firstQ(){
 
 }
 
-------------------------------------------
-
-function secondQ(){
-
-    let inputs = [];
-    inputs[0] = prompt("막대A 길이");
-    inputs[1] = prompt("막대B 길이");
-    inputs[2] = prompt("막대C 길이");
-  
-    //예외처리
-  for(let i=0; i<inputs.length; i++){
-      let ck = checkNum(inputs[i]);
-    if(!ck){
-      alert("숫자로 입력해주세요.")
-      return false;
-    }
-    
-    if(inputs[i] > 100){
-       alert("100이하의 숫자로 입력해주세요.")
-      return false;
-    }
-  }
-
-  let maxValue = Math.max(...inputs);
-  let sum = 0;
-  
-  if(inputs[0] == maxValue){
-    sum = Number(inputs[1]) + Number(inputs[2]);
-  }
-  
-  if(inputs[1] == maxValue){
-    sum = Number(inputs[0]) + Number(inputs[2]);
-  }
-  
-  if(inputs[2] == maxValue){
-    sum = Number(inputs[0]) + Number(inputs[1]);
-  }
-  
-  
-  alert(Number(maxValue) > sum ? "NO" : "YES");
- 
-}
-
-
 function checkNum(num){
   
   if(isNaN(num)){
